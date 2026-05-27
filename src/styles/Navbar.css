@@ -1,1 +1,174 @@
 /* bizzTemplates/FreelanceTemplate/src/styles/Navbar.css */
+
+.navbar {
+    position: fixed;
+    top: 0;
+
+    width: 100%;
+
+    padding: 0.7rem 3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 1000;
+
+    backdrop-filter: blur(20px);
+
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+
+    border-bottom: 1px solid var(--border);
+
+    transition: var(--transition-fast);
+  }
+
+  [data-theme="light"] .navbar {
+    background: rgba(255, 255, 255, 0.72);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .logo-main {
+    font-size: 1rem;
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
+  }
+
+  .logo-accent {
+    color: var(--accent);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--text-muted);
+
+    font-size: 0.92rem;
+    font-weight: 500;
+
+    transition: var(--transition-fast);
+
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -6px;
+
+    width: 0%;
+    height: 1px;
+
+    background: var(--accent);
+
+    transition: var(--transition-fast);
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
+  .nav-links a:hover {
+    color: var(--text);
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  /* Theme Toggle */
+
+  .theme-toggle {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    border: 1px solid var(--border);
+
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: var(--transition-medium);
+  }
+
+  .theme-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--accent);
+  }
+
+  .theme-toggle:hover {
+    background: var(--surface);
+  }
+
+  /* Hamburger */
+
+  .hamburger {
+    display: none;
+
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 5px;
+
+    width: 28px;
+    height: 28px;
+
+    background: transparent;
+
+    border: none;
+
+    cursor: pointer;
+
+    z-index: 1100;
+  }
+
+  .hamburger span {
+    display: block;
+
+    height: 2px;
+    width: 100%;
+
+    background: var(--text);
+
+    transition: var(--transition-medium);
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }

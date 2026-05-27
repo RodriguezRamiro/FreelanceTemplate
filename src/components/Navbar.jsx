@@ -1,6 +1,7 @@
 /* bizzTemplates/FreelanceTemplate/src/components/Navbar.jsx */
 
 import { useState } from "react";
+import "../styles/Navbar.css";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
